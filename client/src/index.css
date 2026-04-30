@@ -1,0 +1,309 @@
+:root {
+  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: #1f2937;
+  background: #f3f5f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f7;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 1px solid #cfd6df;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+button:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+button:disabled {
+  color: #6b7280;
+  cursor: default;
+  background: #eef1f4;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cfd6df;
+  border-radius: 6px;
+  color: #111827;
+  background: #ffffff;
+  padding: 8px 10px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #111827;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.app-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(320px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.workflow-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.page-nav button {
+  text-align: left;
+}
+
+.page-nav button.active {
+  background: #eef1f4;
+  border-color: #9ca3af;
+  font-weight: 600;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.annotation-panel {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.color-button {
+  text-transform: capitalize;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.custom-fields {
+  margin-bottom: 16px;
+}
+
+.custom-field-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.custom-field-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.stats-list {
+  display: grid;
+  gap: 4px;
+  color: #374151;
+}
+
+.saved-finding-image {
+  position: relative;
+  width: 100%;
+  max-height: 320px;
+  border: 1px solid #dfe4ea;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.saved-finding-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.saved-annotation {
+  position: absolute;
+  border: 2px solid #ef4444;
+  pointer-events: none;
+}
+
+.saved-annotation.circle {
+  border-radius: 999px;
+}
+
+.saved-finding-details {
+  display: grid;
+  gap: 8px;
+}
+
+.preview-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 420px;
+}
+
+.findings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.finding-preview {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  border-top: 1px solid #edf0f3;
+  padding-top: 14px;
+}
+
+.finding-preview:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.finding-preview img {
+  width: 120px;
+  max-height: 90px;
+  object-fit: cover;
+  border: 1px solid #dfe4ea;
+  border-radius: 6px;
+}
+
+.finding-preview.compact p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-actions button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.report-page-preview .button-row span {
+  color: #374151;
+  font-size: 14px;
+}
+
+.report-page {
+  display: grid;
+  gap: 8px;
+  min-height: 320px;
+  border: 1px solid #edf0f3;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 24px 16px;
+  }
+
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-field-inputs {
+    grid-template-columns: 1fr;
+  }
+}
