@@ -4,10 +4,10 @@ type SelectedPage =
   | 'new-finding'
   | 'export'
   | `finding-${number}`
-  | `draft-${number}`
+  | `image-${number}`
 
 type PageNavigatorProps = {
-  draftFindingsCount: number
+  imageCount: number
   findingsCount: number
   selectedPage: SelectedPage
   onSelectPage: (page: SelectedPage) => void
@@ -15,7 +15,7 @@ type PageNavigatorProps = {
 }
 
 function PageNavigator({
-  draftFindingsCount,
+  imageCount,
   findingsCount,
   selectedPage,
   onSelectPage,
@@ -47,14 +47,14 @@ function PageNavigator({
           Finding {index + 1}
         </button>
       ))}
-      {Array.from({ length: draftFindingsCount }, (_, index) => (
+      {Array.from({ length: imageCount }, (_, index) => (
         <button
-          key={`draft-${index}`}
+          key={`image-${index}`}
           type="button"
-          className={selectedPage === `draft-${index}` ? 'active' : ''}
-          onClick={() => onSelectPage(`draft-${index}`)}
+          className={selectedPage === `image-${index}` ? 'active' : ''}
+          onClick={() => onSelectPage(`image-${index}`)}
         >
-          Draft {index + 1}
+          Image {index + 1}
         </button>
       ))}
       <button
